@@ -24,7 +24,6 @@
         ],
         "outputPath": "dist/apps/angular-store",
         "index": "apps/angular-store/src/index.html",
-        "main": "apps/angular-store/src/main.ts",
         "browser": "apps/angular-store/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular-store/tsconfig.app.json",
