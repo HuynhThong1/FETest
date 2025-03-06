@@ -1,33 +1,44 @@
-<!-- <full-calendar [options]="calendarOptions">
-  <ng-template #eventContent let-arg>
-    <b>{{ arg.event.title }}</b>
-  </ng-template>
-</full-calendar> -->
-
-
-
 <div class="calendar-container">
-  <full-calendar [options]="calendarOptions"></full-calendar>
-</div>
-
-<div class="form-container">
-  <label>Nom:</label>
-  <input type="text" [(ngModel)]="formData.name" placeholder="Entrez votre nom" />
-
-  <label>Email:</label>
-  <input type="email" [(ngModel)]="formData.email" placeholder="Entrez votre e-mail" />
-
-  <label>Message:</label>
-  <textarea [(ngModel)]="formData.message" placeholder="Votre message"></textarea>
-
-  <label>Fichier:</label>
-  <input type="file" (change)="onFileSelected($event)" />
-  <span class="file-info" *ngIf="formData.file">
-    📎 {{ formData.file.name }} (*fichiers pdf uniquement)
-  </span>
-
-  <div class="buttons">
-    <button (click)="clearForm()">Clear All</button>
-    <button class="submit-btn" (click)="submitForm()">Envoyer 🚀</button>
+  <div class="calendar-header">
+    <img
+      src="assets/icons/arrow-left.svg"
+      alt="Card Image 1"
+      (click)="prevMonth()"
+    />
+    <h2>
+      {{
+        currentDate.toLocaleString('default', {
+          month: 'long',
+          year: 'numeric'
+        })
+      }}
+    </h2>
+    <span>
+      <img
+        src="assets/icons/arrow-right.svg"
+        alt="Card Image 1"
+        (click)="nextMonth()"
+      />
+    </span>
+  </div>
+  <div class="calendar-grid">
+    <div
+      class="day-label"
+      *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+    >
+      {{ day }}
+    </div>
+    <div
+      *ngFor="let day of daysInMonth"
+      class="day"
+      [ngClass]="{
+        libre: day?.status === 'Libre',
+        occupe: day?.status === 'Occupé',
+        today: day?.isToday
+      }"
+    >
+      {{ day?.day }}
+      <span *ngIf="day?.status">{{ day?.status }}</span>
+    </div>
   </div>
 </div>

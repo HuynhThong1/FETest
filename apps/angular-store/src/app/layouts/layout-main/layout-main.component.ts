@@ -12,6 +12,8 @@ import { OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { catchError, of, tap } from 'rxjs';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { LayoutCalendarComponent } from '../layout-calendar/layout-calendar.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-layout-main',
@@ -25,6 +27,8 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
     LayoutGalleryComponent,
     LayoutExploreComponent,
     LayoutFooterComponent,
+    LayoutCalendarComponent,
+    HeaderComponent
   ],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',

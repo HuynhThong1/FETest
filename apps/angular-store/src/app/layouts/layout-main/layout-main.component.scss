@@ -4,3 +4,21 @@
   margin: auto;
   // height: 100vh;
 }
+
+.chat-icon {
+  position: fixed;
+  bottom: 80px;
+  right: 148px;
+
+  display: flex;
+  width: 56px;
+  height: 56px;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  border-radius: 222px;
+  background: var(--1, #f2542d);
+  cursor: pointer;
+}

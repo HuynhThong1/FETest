@@ -1,7 +1,10 @@
 <div class="layout-calendar">
-  <app-header-section></app-header-section>
+  <app-header-section [title]="bloc_2_2()?.title"></app-header-section>
 
   <div class="calendar-section">
     <app-calendar></app-calendar>
+
+
+    <app-contact-form [bloc_2_2]="bloc_2_2()"></app-contact-form>
   </div>
 </div>

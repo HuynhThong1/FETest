@@ -1,0 +1,53 @@
+<div class="contact-form-container" *ngIf="contactForm">
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <label class="form-input"
+      >{{ bloc_2_2()?.btn_1[0] }}:
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="{{ bloc_2_2()?.btn_1[1] }}"
+      />
+    </label>
+    <label class="form-input"
+      >{{ bloc_2_2()?.btn_2[0] }}:
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="{{ bloc_2_2()?.btn_2[1] }}"
+      />
+    </label>
+    <label class="form-input"
+      >{{ bloc_2_2()?.btn_3 }}:
+      <textarea
+        formControlName="message"
+        placeholder="Votre message"
+      ></textarea>
+    </label>
+    <label class="form-input file"
+      >{{ bloc_2_2()?.btn_4[0] }}:
+      <input
+        class="file-input"
+        type="file"
+        (change)="onFileSelected($event)"
+      />
+      <span class="container"
+        ><img src="assets/icons/paperclip.svg" alt="Send" /><span
+          class="placeholder"
+          >{{ bloc_2_2()?.btn_4[1] }}</span
+        >
+        <span class="file-type">(*{{ bloc_2_2()?.btn_4[2] }})</span></span
+      >
+      <!-- <span *ngIf="fileName">📎 {{ fileName }}</span>
+      <small>(*fichiers pdf uniquement)</small> -->
+    </label>
+    <div class="form-actions">
+      <button type="button" (click)="clearForm()">
+        {{ bloc_2_2()?.btn_5 }}
+      </button>
+      <button type="submit">
+        {{ bloc_2_2()?.btn_6 }}
+        <img src="assets/icons/send.svg" alt="Send" />
+      </button>
+    </div>
+  </form>
+</div>
