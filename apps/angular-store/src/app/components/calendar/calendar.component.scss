@@ -13,9 +13,19 @@
   align-items: center;
   width: 20%;
   margin: auto;
+  margin-bottom: 32px;
 
   h2 {
     margin: 0;
+
+    color: var(--3, #562c2c);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 120% */
+    letter-spacing: -0.14px;
   }
 }
 
@@ -66,4 +76,3 @@
 .today {
   background-color: #f2542d;
 }
-

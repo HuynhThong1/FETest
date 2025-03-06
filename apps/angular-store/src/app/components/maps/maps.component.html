@@ -8,14 +8,12 @@
     class="marker"
     [style.top]="location.coordinates?.latitude + '%'"
     [style.left]="location.coordinates?.longitude + '%'"
-    (mouseenter)="onHover(location)"
-    (mouseleave)="onLeave()"
   >
     <!-- 📍 -->
-  <span>
-    <img src="assets/images/marker.png" alt="Marker" />
-    <!-- <span class="circle"></span> -->
-  </span>
+    <span (mouseenter)="onHover(location)" (mouseleave)="onLeave()">
+      <img src="assets/images/marker.png" alt="Marker" />
+      <!-- <span class="circle"></span> -->
+    </span>
   </div>
   <div
     *ngIf="hoveredLocation"
