@@ -53,6 +53,7 @@ export class LayoutMainComponent implements OnInit {
   bloc_6 = signal<NzSafeAny>({});
 
   footer = signal<NzSafeAny>({});
+  carte_point = signal<NzSafeAny[]>([]);
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
@@ -72,6 +73,7 @@ export class LayoutMainComponent implements OnInit {
       this.bloc_5.set(data.bloc_5);
       this.bloc_6.set(data.bloc_6);
       this.footer.set(data.footer);
+      this.carte_point.set(data.carte_point);
     }
   });
 
