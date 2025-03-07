@@ -3,17 +3,13 @@
   <div class="section">
     <div class="text-content">
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially
+        {{ bloc_5()?.text }}
       </p>
 
       <p class="text-title">
-        Immortalisez des moments inoubliables avec
-        <span class="hightlight">#BASIC</span>
+        <!-- Immortalisez des moments inoubliables avec
+        <span class="hightlight">#BASIC</span> -->
+        {{ bloc_5()?.title }}
       </p>
     </div>
   </div>
@@ -24,20 +20,19 @@
       <img src="assets/images/fruit.png" alt="Fruit Platter" />
       <div class="image-caption">
         <div class="caption-content">
-          <h4>La famille</h4>
+          <h4>{{ bloc_5()?.reviews[0].author }}</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {{ bloc_5()?.reviews[0].review }}
           </p>
         </div>
-        <span class="date">24 Sep 2024</span>
+        <span class="date"> {{ bloc_5()?.reviews[0].date }}</span>
       </div>
     </div>
   </div>
 
   <!-- Small Image Gallery -->
   <div class="gallery">
-    <div class="gallery-item" *ngFor="let item of galleryItems">
+    <div class="gallery-item" *ngFor="let item of galleryItems()">
       <img [src]="item.image" alt="Gallery Image" />
       <div class="gallery-caption">
         <span class="icon">📷</span> {{ item.name }}
@@ -48,8 +43,10 @@
 
   <!-- Footer -->
   <div class="footer">
-    Consultez <span class="mention">BASIC</span> et
+    <!-- Consultez <span class="mention">BASIC</span> et
     <span class="hashtag">#BASIC</span> pour découvrir les expériences
-    inoubliables des pourvoiries et activités BASIC.
+    inoubliables des pourvoiries et activités BASIC. -->
+
+    {{ bloc_5()?.footer }}
   </div>
 </div>

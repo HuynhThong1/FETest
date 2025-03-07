@@ -12,7 +12,7 @@ export class MapsComponent {
   carte_point = input<NzSafeAny[]>([]);
 
   locations = computed<Location[]>(() => {
-    return this.carte_point().map((location) => ({
+    return this.carte_point()?.map((location) => ({
       name: location.name,
       phone: location.phone,
       website: location.website,

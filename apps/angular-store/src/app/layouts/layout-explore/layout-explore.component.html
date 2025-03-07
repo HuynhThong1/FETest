@@ -1,12 +1,13 @@
 <div class="layout-explore">
   <div class="explore-content">
-    <h2>Explorez avec BASIC <span class="highlight">dès aujourd’hui</span></h2>
+    <h2>
+      {{ bloc_6()?.title }}
+      <span class="highlight">{{ bloc_6()?.subtitle }}</span>
+    </h2>
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s,
+      {{ bloc_6()?.text }}
     </p>
 
-    <button>Explorer</button>
+    <button>{{ bloc_6()?.button }}</button>
   </div>
 </div>

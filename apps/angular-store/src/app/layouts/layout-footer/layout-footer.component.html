@@ -2,32 +2,29 @@
   <div class="footer-content">
     <!-- Left Section -->
     <div class="footer-left">
-      <p>BASIC</p>
-      <p>(514) 904-6789</p>
-      <p>Québec, 3100 Boulevard de la Côte-Vertu</p>
+      <p>{{ footer()?.address?.name }}</p>
+      <p>{{ footer()?.address?.phone }}</p>
+      <p>{{ footer()?.address?.location }}</p>
     </div>
 
     <!-- Middle Section -->
     <div class="footer-middle">
       <ul>
-        <li><a href="#">Activité 1</a></li>
-        <li><a href="#">Activité 2</a></li>
-        <li><a href="#">Activité 3</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Titre 1</a></li>
-        <li><a href="#">Titre 2</a></li>
-        <li><a href="#">Titre 3</a></li>
+        @for(item of footer()?.links; track $index) {
+        <li>
+          <a href="{{ item.url }}">{{ item.name }}</a>
+        </li>
+        }
       </ul>
     </div>
 
     <!-- Right Section -->
-    <div class="footer-right">
+    <!-- <div class="footer-right">
       <ul>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Nous contacter</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
   <!-- Bottom Section -->

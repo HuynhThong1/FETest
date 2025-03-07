@@ -36,51 +36,74 @@
 
 /* === Middle Section === */
 .footer-middle {
-  flex: 2;
+  flex: 3;
   display: flex;
   justify-content: space-evenly;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 3; /* Split items into 3 columns */
+    column-gap: 40px; /* Adjust spacing between columns */
+  }
+
+  ul li {
+    break-inside: avoid; /* Prevents items from breaking across columns */
+    margin-bottom: 10px; /* Space between items */
+    color: white;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: inherit; /* Keep text color consistent */
+  }
+
+  ul li a:hover {
+    text-decoration: underline;
+  }
 }
 
-.footer-middle ul {
-  list-style: none;
-  padding: 0;
-}
+// .footer-middle ul {
+//   list-style: none;
+//   padding: 0;
+// }
 
-.footer-middle ul li {
-  margin-bottom: 5px;
-}
+// .footer-middle ul li {
+//   margin-bottom: 5px;
+// }
 
-.footer-middle ul li a {
-  text-decoration: none;
-  color: #d3d3d3;
-}
+// .footer-middle ul li a {
+//   text-decoration: none;
+//   color: #d3d3d3;
+// }
 
-.footer-middle ul li a:hover {
-  color: #ff6f61;
-}
+// .footer-middle ul li a:hover {
+//   color: #ff6f61;
+// }
 
 /* === Right Section === */
-.footer-right {
-  flex: 1;
-}
+// .footer-right {
+//   flex: 1;
+// }
 
-.footer-right ul {
-  list-style: none;
-  padding: 0;
-}
+// .footer-right ul {
+//   list-style: none;
+//   padding: 0;
+// }
 
-.footer-right ul li {
-  margin-bottom: 5px;
-}
+// .footer-right ul li {
+//   margin-bottom: 5px;
+// }
 
-.footer-right ul li a {
-  text-decoration: none;
-  color: #d3d3d3;
-}
+// .footer-right ul li a {
+//   text-decoration: none;
+//   color: #d3d3d3;
+// }
 
-.footer-right ul li a:hover {
-  color: #ff6f61;
-}
+// .footer-right ul li a:hover {
+//   color: #ff6f61;
+// }
 
 /* === Bottom Section === */
 .footer-bottom {
