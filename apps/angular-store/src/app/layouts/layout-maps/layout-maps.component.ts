@@ -13,4 +13,5 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
 export class LayoutMapsComponent {
 
   bloc_2 = input<NzSafeAny>({});
+  carte_point = input<NzSafeAny[]>([]);
 }

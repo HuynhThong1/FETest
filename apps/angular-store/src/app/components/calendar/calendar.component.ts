@@ -12,50 +12,79 @@ import dayGridPlugin from '@fullcalendar/daygrid';
   styleUrl: './calendar.component.scss',
 })
 export class CalendarComponent {
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-    file: null as File | null
+  currentDate = new Date();
+  daysInMonth: any[] = [];
+  statuses: { [key: number]: string } = {
+    1: 'Occupé',
+    2: 'Occupé',
+    3: 'Libre',
+    4: 'Occupé',
+    5: 'Libre',
+    6: 'Libre',
+    7: 'Libre',
+    8: 'Libre',
+    9: 'Libre',
+    10: 'Libre',
+    11: 'Occupé',
+    12: 'Libre',
+    13: 'Libre',
+    14: 'Libre',
+    15: 'Occupé',
+    16: 'Libre',
+    17: 'Occupé',
+    18: 'Libre',
+    19: 'Libre',
+    20: 'Occupé',
+    21: 'Libre',
+    22: 'Libre',
+    23: 'Libre',
+    24: 'Libre',
+    25: 'Libre',
+    26: 'Libre',
+    27: 'Libre',
+    28: 'Libre',
+    29: 'Libre',
+    30: 'Libre',
+    31: 'Libre',
   };
 
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    plugins: [dayGridPlugin],
-    headerToolbar: {
-      left: 'prev',
-      center: 'title',
-      right: 'next'
-    },
-    events: [
-      { title: 'Occupé', start: '2025-07-01', className: 'occupied' },
-      { title: 'Libre', start: '2025-07-05', className: 'libre' },
-      { title: 'Libre', start: '2025-07-10', className: 'libre' },
-      { title: 'Libre', start: '2025-07-12', className: 'libre' }
-    ],
-    contentHeight: '500px'
-  };
+  constructor() {
+    this.generateCalendar();
+  }
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file && file.type === 'application/pdf') {
-      this.formData.file = file;
-    } else {
-      alert('Seuls les fichiers PDF sont autorisés.');
+  generateCalendar() {
+    const year = this.currentDate.getFullYear();
+    const month = this.currentDate.getMonth();
+    let firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Adjust firstDay so that Monday is the first day of the week
+    firstDay = firstDay === 0 ? 6 : firstDay - 1;
+
+    const today = new Date();
+    const todayDate = today.getDate();
+    const isCurrentMonth =
+      today.getMonth() === month && today.getFullYear() === year;
+    this.daysInMonth = [];
+    for (let i = 0; i < firstDay; i++) {
+      this.daysInMonth.push(null);
+    }
+    for (let day = 1; day <= daysInMonth; day++) {
+      this.daysInMonth.push({
+        day,
+        status: this.statuses[day] || '',
+        isToday: isCurrentMonth && day === todayDate,
+      });
     }
   }
 
-  submitForm() {
-    console.log('Form Data:', this.formData);
-    alert('Formulaire soumis avec succès !');
+  prevMonth() {
+    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+    this.generateCalendar();
   }
 
-  clearForm() {
-    this.formData = {
-      name: '',
-      email: '',
-      message: '',
-      file: null
-    };
+  nextMonth() {
+    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+    this.generateCalendar();
   }
 }

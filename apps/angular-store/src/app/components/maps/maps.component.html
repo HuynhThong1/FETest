@@ -1,3 +1,37 @@
 <div class="maps-container">
-
+  <div class="tag">
+    <img src="assets/images/sample.png" alt="Sample" />
+    Emplacement
+  </div>
+  <div
+    *ngFor="let location of locations()"
+    class="marker"
+    [style.top]="location.coordinates?.latitude + '%'"
+    [style.left]="location.coordinates?.longitude + '%'"
+  >
+    <!-- 📍 -->
+    <span (mouseenter)="onHover(location)" (mouseleave)="onLeave()">
+      <img src="assets/images/marker.png" alt="Marker" />
+      <!-- <span class="circle"></span> -->
+    </span>
+  </div>
+  <div
+    *ngIf="hoveredLocation"
+    class="popup"
+    [style.top]="hoveredLocation.coordinates?.latitude + '%'"
+    [style.left]="hoveredLocation.coordinates?.longitude + '%'"
+  >
+    <h3>{{ hoveredLocation.name }}</h3>
+    <p><strong>Address:</strong> {{ hoveredLocation.address }}</p>
+    <p *ngIf="hoveredLocation.phone">
+      <strong>Phone:</strong> {{ hoveredLocation.phone }}
+    </p>
+    <p *ngIf="hoveredLocation.email">
+      <strong>Email:</strong> {{ hoveredLocation.email }}
+    </p>
+    <p>
+      <strong>Activities:</strong>
+      {{ hoveredLocation.marker_information.join(', ') }}
+    </p>
+  </div>
 </div>
