@@ -28,7 +28,7 @@ import { HeaderComponent } from '../../components/header/header.component';
     LayoutExploreComponent,
     LayoutFooterComponent,
     LayoutCalendarComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',
@@ -38,7 +38,7 @@ export class LayoutMainComponent implements OnInit {
   data = signal<NzSafeAny>({});
 
   banner_menu = signal<string[]>([]);
-  banner_title = signal<string[]>([]);
+  banner_title = signal<string>('');
 
   bloc_1 = signal<NzSafeAny>({});
   bloc_2 = signal<NzSafeAny>({});
@@ -63,8 +63,8 @@ export class LayoutMainComponent implements OnInit {
   dataEffect = effect(() => {
     const data = this.data();
     if (data) {
-      this.banner_menu.set(data.banner_menu);
-      this.banner_title.set(data.banner_title);
+      this.banner_menu.set(data.head_menu);
+      this.banner_title.set('SAMPLE LOGO');
       this.bloc_1.set(data.bloc_1);
       this.bloc_2.set(data.bloc_2);
       this.bloc_2_2.set(data.bloc_2_2);

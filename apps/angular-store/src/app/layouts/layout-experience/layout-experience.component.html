@@ -3,8 +3,8 @@
   <div class="text-section">
     <h1>
       <span class="highlight"
-        >Des expériences inoubliables
-        <span class="light-text">LOREM IPSUM TRUC</span></span
+        >{{ bloc_4()?.title }}
+        <span class="light-text">{{ bloc_4()?.text_title }}</span></span
       >
       <span class="highlight"></span>
     </h1>
@@ -13,17 +13,9 @@
       <hr class="divider" />
 
       <div class="about">
-        <h3>À Propos De BASIC</h3>
+        <h3>{{ bloc_4()?.subtitle }}</h3>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          {{ bloc_4()?.text }}
         </p>
       </div>
     </div>
@@ -37,12 +29,12 @@
 
 <!-- Features Section -->
 <div class="features">
-  <div class="feature-item" *ngFor="let feature of features">
+  <div class="feature-item" *ngFor="let feature of features()">
     <div class="icon">
       <img src="{{ feature.icon }}" alt="icon" />
     </div>
 
     <h4>{{ feature.title }}</h4>
-    <p>{{ feature.subtitle }}</p>
+    <p>{{ feature.description }}</p>
   </div>
 </div>

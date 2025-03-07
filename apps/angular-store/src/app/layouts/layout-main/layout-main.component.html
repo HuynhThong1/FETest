@@ -10,10 +10,13 @@
   (changeLanguage)="onLanguageChange($event)"
 ></app-layout-header>
 <app-layout-blog [bloc_1]="bloc_1()"></app-layout-blog>
-<app-layout-maps [bloc_2]="bloc_2()" [carte_point]="carte_point()"></app-layout-maps>
+<app-layout-maps
+  [bloc_2]="bloc_2()"
+  [carte_point]="carte_point()"
+></app-layout-maps>
 <app-layout-calendar [bloc_2_2]="bloc_2_2()"></app-layout-calendar>
 <app-layout-slides [bloc_3]="bloc_3()"></app-layout-slides>
-<app-layout-experience></app-layout-experience>
+<app-layout-experience [bloc_4]="bloc_4()"></app-layout-experience>
 <app-layout-gallery></app-layout-gallery>
 <app-layout-explore></app-layout-explore>
 <app-layout-footer></app-layout-footer>

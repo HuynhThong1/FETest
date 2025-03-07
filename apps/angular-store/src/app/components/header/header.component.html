@@ -1,7 +1,7 @@
 <header class="header">
-  @for(title of bannerTitle(); track $index) {
-  <div class="logo" [ngClass]="{ second: $index !== 0 }">{{ title }}</div>
-  }
+  <!-- @for(title of bannerTitle(); track $index) { -->
+  <div class="logo">{{ bannerTitle() }}</div>
+  <!-- } -->
   <nav class="nav">
     @for(item of bannerMenu(); track $index) {
     <a href="#">{{ item }}</a>

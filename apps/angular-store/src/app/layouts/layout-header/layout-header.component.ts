@@ -9,10 +9,8 @@ import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
   styleUrl: './layout-header.component.scss',
 })
 export class LayoutHeaderComponent {
-
   changeLanguage = output<string>();
 
-
   bannerMenu = input<string[]>();
-  bannerTitle = input<string[]>();
+  bannerTitle = input<string>();
 }
