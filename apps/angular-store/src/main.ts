@@ -11,12 +11,11 @@ import { environment } from './environments/environment';
 
 import { inject } from '@vercel/analytics';
 
-inject();
-
 // Factory function for translations
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+inject();
 
 bootstrapApplication(AppComponent, {
   providers: [
