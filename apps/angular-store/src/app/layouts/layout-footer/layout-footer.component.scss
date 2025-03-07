@@ -51,16 +51,17 @@
   ul li {
     break-inside: avoid; /* Prevents items from breaking across columns */
     margin-bottom: 10px; /* Space between items */
-    color: white;
   }
 
   ul li a {
     text-decoration: none;
     color: inherit; /* Keep text color consistent */
+    color: #d3d3d3;
   }
 
   ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #ff6f61;
   }
 }
 

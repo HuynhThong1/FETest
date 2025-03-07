@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 
 .action-btn {
@@ -57,6 +58,7 @@
   gap: 8px;
   border-radius: 33px;
   background: var(--1, #f2542d);
+  cursor: pointer;
 }
 
 .language-switcher {
