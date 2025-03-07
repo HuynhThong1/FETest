@@ -1,3 +1,4 @@
+import { inject } from '@vercel/analytics';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
@@ -9,13 +10,12 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from './environments/environment';
 
-import { inject } from '@vercel/analytics';
+inject();
 
 // Factory function for translations
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-inject();
 
 bootstrapApplication(AppComponent, {
   providers: [
