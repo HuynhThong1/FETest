@@ -9,6 +9,10 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from './environments/environment';
 
+import { inject } from '@vercel/analytics';
+
+inject();
+
 // Factory function for translations
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,10 +29,10 @@ bootstrapApplication(AppComponent, {
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+          deps: [HttpClient],
         },
-        defaultLanguage: 'en'
+        defaultLanguage: 'en',
       })
-    )
-  ]
-}).catch(err => console.error(err));
+    ),
+  ],
+}).catch((err) => console.error(err));
